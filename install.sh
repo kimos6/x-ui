@@ -86,13 +86,13 @@ config_after_install() {
     echo -e "${yellow}For security reasons, it is necessary to forcibly modify the port and account password after the installation/update is completed.${plain}"
     read -p "Confirm whether to continue?[y/n]": config_confirm
     if [[ x"${config_confirm}" == x"y" || x"${config_confirm}" == x"Y" ]]; then
-        read -p "Please set your account name:" config_account
+        read -p "نام کاربری پنل را تعریف کنید:" config_account
         echo -e "${yellow}Your account name will be set to:${config_account}${plain}"
-        read -p "Please set your account password:" config_password
+        read -p "رمز کاربری پنل را تعریف کنید:" config_password
         echo -e "${yellow}Please set your account password:${config_password}${plain}"
-        read -p "Please set the panel access port:" config_port
+        read -p "پورت دسترسی به پنل را تعریف کنید:" config_port
         echo -e "${yellow}Your panel access port will be set to:${config_port}${plain}"
-        echo -e "${yellow}Confirm setting, setting${plain}"
+        echo -e "${yellow}تنظیمات را تایید کنید${plain}"
         /usr/local/x-ui/x-ui setting -username ${config_account} -password ${config_password}
         echo -e "${yellow}Account password setting completed${plain}"
         /usr/local/x-ui/x-ui setting -port ${config_port}
